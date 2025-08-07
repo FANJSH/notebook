@@ -19,9 +19,26 @@ window.MathJax = {
 
 <style>
 .outer, .inner {
-  width: 99% !important;
-  max-width: 20000px !important;
+  width: 96% !important;
+  max-width: 1200px !important;
   margin: 0 auto !important;
+}
+@media (max-width: 700px) {
+  .outer, .inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+/* 以下是针对公式和代码块的适配优化 */
+mjx-container, .MathJax_Display, pre, code {
+  overflow-x: auto !important;
+  box-sizing: border-box;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background: #222 !important;  /* 如已有深色背景可删掉 */
+  color: #fff !important;
+  border-radius: 6px;
 }
 </style>
   
