@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Summary of transport approximation and Consistent P approximation"
-date:   2025-08-07 23:00:00
+date:   2025-08-07 00:00:00
 categories: [Reactor Physics]
 ---
 
