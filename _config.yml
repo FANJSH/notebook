@@ -4,3 +4,4 @@ show_downloads: false
 google_analytics:
 theme: jekyll-theme-slate
 google_analytics: 294118830
+baseurl: "/notebook"
