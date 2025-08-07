@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- MathJax 加载脚本（推荐最新版CDN） -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+.outer, .inner {
+  width: 90% !important;
+  max-width: 20000px !important;
+  margin: 0 auto !important;
+}
+</style>
+  
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/notebook/assets/css/style.css?v=">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Summary of transport approximation and Consistent P approximation | Notebook</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Summary of transport approximation and Consistent P approximation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Summary of transport approximation and Consistent \(P\) approximation Review of transport $P_N$ approximation In 1-D single-group $S_N$ problem, the transport equation can be expressed as" />
+<meta property="og:description" content="Summary of transport approximation and Consistent \(P\) approximation Review of transport $P_N$ approximation In 1-D single-group $S_N$ problem, the transport equation can be expressed as" />
+<link rel="canonical" href="http://localhost:4000/notebook/reactor%20physics/2025/08/07/transport-consistent.html" />
+<meta property="og:url" content="http://localhost:4000/notebook/reactor%20physics/2025/08/07/transport-consistent.html" />
+<meta property="og:site_name" content="Notebook" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-07T09:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Summary of transport approximation and Consistent P approximation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-07T09:00:00+09:00","datePublished":"2025-08-07T09:00:00+09:00","description":"Summary of transport approximation and Consistent \\(P\\) approximation Review of transport $P_N$ approximation In 1-D single-group $S_N$ problem, the transport equation can be expressed as","headline":"Summary of transport approximation and Consistent P approximation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/notebook/reactor%20physics/2025/08/07/transport-consistent.html"},"url":"http://localhost:4000/notebook/reactor%20physics/2025/08/07/transport-consistent.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '294118830', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/notebook/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+
+          <h1 id="project_title">Notebook</h1>
+          <h2 id="project_tagline">A notebook contains everything that interests me.</h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="summary-of-transport-approximation-and-consistent-p-approximation">Summary of transport approximation and Consistent \(P\) approximation</h1>
+<h2 id="review-of-transport-p_n-approximation">Review of transport $P_N$ approximation</h2>
+<p>In 1-D single-group $S_N$ problem, the transport equation can be expressed as</p>
+
+\[\mu \frac{d}{dx}\psi(x,\mu) + \Sigma_t(x)\psi(x,\mu) =
+     \sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}\Sigma_s^l(x)\phi^l(x)} + S(x,\mu).\]
+
+<p>To eliminate the <strong>pure-forward</strong> scattering which is regarded as does not react with neutron, the scattering source term (RHS first term) should be manipulated.
+Writing the scattering cross-section into pure-forward and others terms, two parts,</p>
+
+\[\Sigma_s(x,\mu) = \hat{\Sigma}_s(x)\delta(\mu-1) - \hat{\Sigma}_s(x)\delta(\mu-1) + \sum^{\infty}_{l=0}{\frac{2l+1}{2}\Sigma_s^l(x) P_l(\mu)}.\]
+
+<p>Combing the second term of Eq.(2) RHS with the third term,</p>
+
+\[\Sigma_s(x,\mu) = \hat{\Sigma}_s(x)\delta(\mu-1) + \sum^{\infty}_{l=0}{\frac{2l+1}{2}P_l(\mu)[\Sigma_s^l(x) - \hat{\Sigma}_s(x)]}.\]
+
+<p>As we know that the pure-forward term should be removed from cross-section, the actual scattering cross-section is</p>
+
+\[\tilde{\Sigma}_s(x, \mu) = \sum^{\infty}_{l=0}{\frac{2l+1}{2}P_l(\mu)[\Sigma_s^l(x) - \hat{\Sigma}_s(x)]}.\]
+
+<p>Assuming</p>
+<ul>
+  <li>\(\hat{\Sigma}_s(x) = \Sigma_s^{N+1}(x)\);</li>
+  <li>\(\Sigma_s^l(x) = \Sigma_s^{N+1}(x)\), for each \(l &gt; N+1\),
+and then, the actual scattering cross-section (Eq. (4)) can be written as</li>
+</ul>
+
+\[\tilde{\Sigma}_s(x,\mu) =
+    \sum^{N}_{l=0}{\frac{2l+1}{2}P_l(\mu)[\Sigma_s^l(x) - \Sigma^{N+1}_s(x)]} +
+    \sum^{\infty}_{l=N+1}{\frac{2l+1}{2}P_l(\mu)[\Sigma_s^{N+1}(x) - \Sigma_s^{N+1}(x)]}.\]
+
+<p>The second term of RHS of Eq. (5) is zero so we can delete it.</p>
+
+\[\tilde{\Sigma}_s(x,\mu) =
+    \sum^{N}_{l=0}{\frac{2l+1}{2}P_l(\mu)[\Sigma_s^l(x) - \Sigma^{N+1}_s(x)]}.\]
+
+<p>Meanwhile, the total cross-section is changed into</p>
+
+\[\tilde{\Sigma}_t(x) = \Sigma_t(x) - \Sigma^{N+1}_s(x).\]
+
+<p>When $N$ is chosen as 0,</p>
+
+\[\tilde{\Sigma}_s(x,\mu) =
+    \frac{1}{2}[\Sigma_s^0(x) - \Sigma^{1}_s(x)].\]
+
+<p>This Eq. (7) is very important since an anisotropy scattering problem is changed into an isotropy scattering problem, but the $1$-th moment of scattering cross-section Legendre Polynomial expansion is taken account implicitly. It is the well-known <strong>transport \(P_0\) approximation</strong> as well as <strong>transport correction</strong>. The treatment (or method) introduced above is the transport P$_N$ approximation. The essence of this method is removing the pure-forward scattering from cross-section, detailed implementation way is modifying each order of moment of scattering cross-section Legendre Polynomial expansion.</p>
+
+<h2 id="consistent-p-approximation">Consistent P approximation</h2>
+
+<p>At present, I have finished the group-collapse by using scalar neutron flux $\phi^0$ as weight.
+This method is quite primitive and straight-forward. This treatment does not take the anisotropy scattering into account.</p>
+
+<p>To consider the anisotropy scattering effect during group-collapse, <strong>Consistent P approximation</strong> can be used.</p>
+
+<p>Few group structure 1-D \(S_N\) transport equation can be written as</p>
+
+\[\mu \frac{d}{dx}\psi_q(x,\mu) + \Sigma_{t,q}(x)\psi_q(x,\mu) =
+     \sum^Q_{q'= 0}{\sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\Sigma_{s,q'\rightarrow q}^l(x)\phi_{q'}^l(x)}} + S_q(x,\mu).\]
+
+<p>Expanding the collision term (2nd term of LHS) by Legendre Polynomial, just like the scattering source term. We will do this expansion for both fine-group and few-group structure both.
+At first, as the total cross-section in fine-group structure is independent to direction, so</p>
+
+\[\Sigma_{t,g}(x)\psi_g(x,\mu) = \Sigma_{t,g}(x) \sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\phi^l_{g}(x)}.\]
+
+<p>Then,</p>
+
+\[\Sigma_{t,q}(x,\mu)\psi_q(x,\mu) = \sum_{g\in q}{\Sigma_{t,g}(x) \sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\phi^l_{g}(x)}}.\]
+
+<p>At the meantime, the following equation is hold theoretically.</p>
+
+\[\Sigma_{t,q}(x,\mu)\psi_q(x,\mu) = \sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\Sigma^l_{t,q}(x)\phi^l_{q}(x)}.\]
+
+<p>Assuming the equivalent relationship of $l$-th order moment of flux still holds between fine-group and few-group structures, i.e., $\sum_{g\in q}\phi^l_g$ = $\phi^l_q$. The following equation can be obtained,</p>
+
+\[\Sigma^l_{t,q}(x) = \frac{\sum_{g\in q}\Sigma_{t,g}(x)\phi^l_g(x)}{\sum_{g\in q}\phi^l_g(x)}.\]
+
+<p>Next, the multi-group 1-D S$_N$ transport equations for few-group structure is</p>
+
+\[\mu \frac{d}{dx}\psi_q(x,\mu) + \sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\phi^l_q(x)\Sigma^l_{t,q}(x)} =
+     \sum^Q_{q'= 0}{\sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\Sigma_{s,q'\rightarrow q}^l(x)\phi_{q'}^l(x)}} + S_q(x,\mu).\]
+
+<p>Moving the collision term of LHS to RHS,</p>
+
+\[\mu\frac{d}{dx}\psi_q(x,\mu) =
+     \sum^Q_{q'= 0}{\sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\phi_{q'}^l(x)\left[\Sigma_{s,q'\rightarrow q}^l(x) - \Sigma^l_{t,q}(x)\delta_{qq'}\right]}} + S_q(x,\mu).\]
+
+<p>Next step, assuming an arbitrary value $\Sigma_q$ to make up a collision term $\Sigma_q(x)\psi_q(x,\mu)$ and put it into both side of Eq. (15).</p>
+
+\[\mu\frac{d}{dx}\psi_q(x,\mu) + \Sigma_q(x)\psi_q(x,\mu) =
+     \sum^Q_{q'= 0}{\sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\phi_{q'}^l(x)\{\Sigma_{s,q'\rightarrow q}^l(x) + \left[\Sigma_q(x)- \Sigma^l_{t,q}(x)\right]\delta_{qq'}\}}} + S_q(x,\mu).\]
+
+<p>Similar to the transport \(P_N\) approximation, we assume that</p>
+<ul>
+  <li>\(\Sigma_q(x) = \Sigma^{N+1}_{t,q}(x)\);</li>
+  <li>\(\Sigma^{l}_{t,q}(x) = \Sigma^{N+1}_{t,q}(x)\), for each \(l&gt;N+1\).</li>
+</ul>
+
+<p>Then, the Eq.(16) becoems to</p>
+
+\[\begin{split}
+     \mu\frac{d}{dx}\psi_q(x,\mu) + \Sigma^{N+1}_{t,q}(x)\psi_q(x,\mu) &amp;= \\
+     &amp;\sum^Q_{q'= 0}{\sum^{\infty}_{l=0}{\frac{2l+1}{4\pi}P_l(\mu)\phi_{q'}^l(x)\{\Sigma_{s,q'\rightarrow q}^l(x) + \left[\Sigma^{N+1}_{t,q}(x)- \Sigma^l_{t,q}(x)\right]\delta_{qq'}\}}} + S_q(x,\mu).
+\end{split}\]
+
+<p>Comparing to the initial equation, Eq.(9), the following changes happened,</p>
+<ul>
+  <li>total cross-section $\Sigma_{t,q}(x,\mu) \rightarrow \Sigma^{N+1}_{t,q}(x)$;</li>
+  <li>$l$-th moment of scattering cross-section \(\Sigma_{s,q'\rightarrow q}^l(x) \rightarrow \{\Sigma_{s,q'\rightarrow q}^l(x) + \left[\Sigma^{N+1}_{t,q}(x)- \Sigma^l_{t,q}(x)\right]\delta_{qq'}\}\).</li>
+</ul>
+
+<p>In the case of Consistent \(P_0\) Approximation, the total cross-section is substituted by \(\Sigma_{t,q}^1(x)\), the \(0\)-th moment of scattering cross-section is substituted by \(\{ \Sigma_{s,q'\rightarrow q}^0(x) +\left[ \Sigma_{t,q}^{1}(x) - \Sigma_{t,q}^0(x) \right] \delta_{qq'}\}\).</p>
+
+<p>As introduced above, \(\phi^1_g(x)\) is required to calculated \(\Sigma^1_{t,q}(x)\).
+In my program, the scattering source is expressed in the way of including a coefficient \(\frac{1}{4\pi}\) therefore the \(l\)-th order moment of neutron flux is defined as</p>
+
+\[\phi^l = 2\pi\int^1_{-1}P_l(\mu)\psi(\mu)\,d\mu \approx 2\pi\sum^N_{i=1}{\omega_i\psi(\mu_i)P_l(\mu_i)},\]
+
+<p>in which $\omega_i$ is the weight corresponding to quadrature set.</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
