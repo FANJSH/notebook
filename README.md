@@ -1,2 +1,2 @@
-# notebook.fanjsh.github.io
-Personal notebook
+# notebook
+A notebook records everything that interests me.
