@@ -1,6 +1,5 @@
 ---
 layout: default
-title: Home
 ---
 
 <h1>最新文章</h1>
