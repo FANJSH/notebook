@@ -1,11 +1,11 @@
 ---
 layout: default
-title:  "Summary of transport approximation and Consistent $$P$$ approximation"
+title:  "Summary of transport approximation and Consistent P approximation"
 date:   2025-08-07 00:00:00
 categories: [Reactor Physics]
 ---
 
-# Summary of transport approximation and Consistent P approximation
+# Summary of transport approximation and Consistent $$P$$ approximation
 ## Review of transport $P_N$ approximation
 In 1-D single-group $S_N$ problem, the transport equation can be expressed as
 
