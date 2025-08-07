@@ -145,8 +145,8 @@ Comparing to the initial equation, Eq.(9), the following changes happened,
 
 In the case of Consistent P0 Approximation, the total cross-section is substituted by $\Sigma_{t,q}^1(x)$, the 0-th moment of scattering cross-section is substituted by $\{ \Sigma_{s,q'\rightarrow q}^0(x) +\left[ \Sigma_{t,q}^{1}(x) - \Sigma_{t,q}^0(x) \right] \delta_{qq'}\}$. 
 
-As introduced above, $\phi^1_g(x)$ is required to calculated $\Sigma^1_{t,q}(x)$. 
-In my program, the scattering source is expressed in the way of including a coefficient $\frac{1}{4\pi}$ therefore the $l$-th order moment of neutron flux is defined as 
+As introduced above, $$\phi^1_g(x)$$ is required to calculated $$\Sigma^1_{t,q}(x)$$. 
+In my program, the scattering source is expressed in the way of including a coefficient $$\frac{1}{4\pi}$$ therefore the $$l$-th order moment of neutron flux is defined as 
 
 $$
     \phi^l = 2\pi\int^1_{-1}P_l(\mu)\psi(\mu)\,d\mu \approx 2\pi\sum^N_{i=1}{\omega_i\psi(\mu_i)P_l(\mu_i)},
