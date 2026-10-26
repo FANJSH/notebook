@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Simple indroduction about resonance theory"
-date:   2026-10-26 15:30:00
+date:   2026-10-01 00:00:00
 categories: [reactor physics]
 ---
 

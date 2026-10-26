@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Experience with using mattpocock skills in codex"
-date:   2026-10-26 13:32:00
+date:   2026-10-01 00:00:00
 categories: [agent, codex]
 ---
 
