@@ -4,5 +4,5 @@ show_downloads: false
 google_analytics:
 theme: jekyll-theme-slate
 google_analytics: 294118830
-baseurl: "/notebook"
-url: "https://FANJSH.github.io"
+baseurl: "/notebook.fanjsh.github.io"
+url: "https://fanjsh.github.io"
