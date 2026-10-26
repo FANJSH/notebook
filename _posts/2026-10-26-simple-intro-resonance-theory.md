@@ -244,7 +244,7 @@ The description till here, the resonance self-shielding effect is evaluated with
 
 <a id="fig-1"></a>
 
-![U-235 and U-238 total cross-section of 57th group in SRAC-107-group structure.](./figures/Selection_001.png)
+![U-235 and U-238 total cross-section of 57th group in SRAC-107-group structure.]({{ '/assets/images/Selection_001.png' | relative_url }})
 
 **Figure 1.** U-235 and U-238 total cross-section of 57th group in SRAC-107-group structure.
 
